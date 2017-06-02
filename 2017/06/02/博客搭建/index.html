@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>基于github+hexo的博客搭建 | 尤硕的博客</title>
+  <title>基于github+hexo的博客搭建(mac) | 尤硕的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="终于把自己的博客搭好了，虽然不知道以后会不会长草。第一篇文章就写一下如何通过github+hexo搭建博客吧。要搭建个人网站，首先需要拥有域名和空间。  域名可以去阿里云，腾讯云之类的购买（这是我的购买链接https://wanwang.aliyun.com）。 至于空间，github给我们提供了一个免费且稳定的空间。">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于github+hexo的博客搭建">
+<meta property="og:title" content="基于github+hexo的博客搭建(mac)">
 <meta property="og:url" content="http://yoursite.com/2017/06/02/博客搭建/index.html">
 <meta property="og:site_name" content="尤硕的博客">
 <meta property="og:description" content="终于把自己的博客搭好了，虽然不知道以后会不会长草。第一篇文章就写一下如何通过github+hexo搭建博客吧。要搭建个人网站，首先需要拥有域名和空间。  域名可以去阿里云，腾讯云之类的购买（这是我的购买链接https://wanwang.aliyun.com）。 至于空间，github给我们提供了一个免费且稳定的空间。">
 <meta property="og:image" content="http://yoursite.com/img/WechatIMG35.jpg">
 <meta property="og:image" content="http://yoursite.com/img/WechatIMG36.jpg">
-<meta property="og:updated_time" content="2017-06-02T09:30:17.000Z">
+<meta property="og:image" content="http://yoursite.com/img/WechatIMG39.jpg">
+<meta property="og:image" content="http://yoursite.com/img/WechatIMG37.jpg">
+<meta property="og:image" content="http://yoursite.com/img/WechatIMG40.jpg">
+<meta property="og:updated_time" content="2017-06-02T11:35:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于github+hexo的博客搭建">
+<meta name="twitter:title" content="基于github+hexo的博客搭建(mac)">
 <meta name="twitter:description" content="终于把自己的博客搭好了，虽然不知道以后会不会长草。第一篇文章就写一下如何通过github+hexo搭建博客吧。要搭建个人网站，首先需要拥有域名和空间。  域名可以去阿里云，腾讯云之类的购买（这是我的购买链接https://wanwang.aliyun.com）。 至于空间，github给我们提供了一个免费且稳定的空间。">
 <meta name="twitter:image" content="http://yoursite.com/img/WechatIMG35.jpg">
   
@@ -166,7 +169,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      基于github+hexo的博客搭建
+      基于github+hexo的博客搭建(mac)
     </h1>
   
 
@@ -186,7 +189,37 @@
 <h5 id="首先登陆你的github帐号-没有就先注册一个-，点击页面右方的new-repository新建一个库"><a href="#首先登陆你的github帐号-没有就先注册一个-，点击页面右方的new-repository新建一个库" class="headerlink" title="首先登陆你的github帐号(没有就先注册一个)，点击页面右方的new repository新建一个库"></a>首先登陆你的github帐号(没有就先注册一个)，点击页面右方的new repository新建一个库</h5><img src="/img/WechatIMG35.jpg" alt="图片"></li>
 </ul>
 <h5 id="库的名字是你的用户名-github-io-比如我的就是youshuo01-github-io"><a href="#库的名字是你的用户名-github-io-比如我的就是youshuo01-github-io" class="headerlink" title="库的名字是你的用户名.github.io,比如我的就是youshuo01.github.io"></a>库的名字是你的用户名.github.io,比如我的就是youshuo01.github.io</h5><p><img src="/img/WechatIMG36.jpg" alt="图片"></p>
-<h5 id="然后来进行环境配置"><a href="#然后来进行环境配置" class="headerlink" title="然后来进行环境配置"></a>然后来进行环境配置</h5><p>安装node.js 和 git 后在终端执行</p>
+<h5 id="添加ssh-key到github"><a href="#添加ssh-key到github" class="headerlink" title="添加ssh key到github"></a>添加ssh key到github</h5><p>ssh是一种安全的传输模式,<br><br>github要求推送代码的用户是合法的，所以每次推送时候都要输入账号密码以验证你是否为合法用户,<br><br>为了省去每次都要输入密码的步骤,我们可以添加ssh key到github。</p>
+<ul>
+<li>执行</li>
+</ul>
+<pre><code>ls -al ~/.ssh</code></pre>
+
+<p>观察是否存在id_rsa.pub或id_dsa.pub</p>
+<ul>
+<li>若不存在执行(存在则跳过)</li>
+</ul>
+<pre><code>
+  $ ssh-keygen -t rsa -C "你的邮箱@example.com"
+  //邮箱是你申请github的邮箱
+
+</code></pre>
+
+<ul>
+<li>获取ssh key</li>
+</ul>
+<pre><code>
+$ cd ~/.ssh
+$ vi id_rsa.pub 
+
+</code></pre>
+
+<p>把里面的信息复制后进入github</p>
+<ul>
+<li>添加到github </li>
+</ul>
+<p>进入setting<br><br><img src="/img/WechatIMG39.jpg" alt="add ssh key"><br><br>title随意填 key里填刚才复制的内容<br><br>然后点击下方add key按钮即可</p>
+<h5 id="然后来进行环境配置"><a href="#然后来进行环境配置" class="headerlink" title="然后来进行环境配置"></a>然后来进行环境配置</h5><p>安装node.js 和 git 后在终端执行如下指令</p>
 <pre><code>
 $ sudo npm install -g hexo //安装hexo
 $ hexo init blog  //建立一个blog文件夹
@@ -196,16 +229,10 @@ $ hexo s  //开启服务器
 //或者 执行 hexo s -p 4000 开启服务器
 
 </code></pre>
-然后在浏览器地址栏 输入localhost:4000 正确的话会出现如下页面
 
-![图片](/img/WechatIMG37.jpg)
-
-这个是hexo默认的主题landscape，你可以选择你喜欢的其他主题。
-这里推荐 NexT和 yilia 我的博客使用的主题就是 yilia。
-下篇文章讲一下如何配置yilia主题。
-
-##### 接下来就是把本地的资源和github上的相关联
-进入刚才的blog文件夹
+<p>然后在浏览器地址栏 输入localhost:4000 正确的话会出现如下页面<br><br><img src="/img/WechatIMG37.jpg" alt="图片"></p>
+<p>这个是hexo默认的主题landscape，你可以选择你喜欢的其他主题。<br><br>这里推荐 NexT和 yilia ,我的博客使用的主题就是 yilia。<br></p>
+<h5 id="接下来就是把本地的资源和github上的相关联"><a href="#接下来就是把本地的资源和github上的相关联" class="headerlink" title="接下来就是把本地的资源和github上的相关联"></a>接下来就是把本地的资源和github上的相关联</h5><p>进入刚才的blog文件夹</p>
 <pre><code>
 $ cd blog
 $ ls //看是否有_config.yml文件
@@ -242,7 +269,27 @@ $ hexo deploy
 
 </code></pre>
 
-<p>未完..有时间接着写</p>
+<h5 id="搭建完成后，以后只需要使用几个简单的指令就可以更新到你的博客上了"><a href="#搭建完成后，以后只需要使用几个简单的指令就可以更新到你的博客上了" class="headerlink" title="搭建完成后，以后只需要使用几个简单的指令就可以更新到你的博客上了"></a>搭建完成后，以后只需要使用几个简单的指令就可以更新到你的博客上了</h5><pre><code>
+hexo s 
+//更新至本地 确认本地无误后再同步至github
+//http://localhost:4000/
+hexo clean 清除缓存
+hexo g -d 
+//同步至github
+//yourname.github.io 
+
+</code></pre>
+
+<h5 id="接下来就是绑定我们的个人域名"><a href="#接下来就是绑定我们的个人域名" class="headerlink" title="接下来就是绑定我们的个人域名"></a>接下来就是绑定我们的个人域名</h5><p>现在使用的是github提供的二级域名<br><br>你可以去我刚才提到的网站上购买一个例如youshuo96.com的域名</p>
+<h5 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h5><ul>
+<li>以万网为例<br><br>购买域名后–&gt;域名与网站–&gt;云解析DNS–&gt;点击你的域名进入解析设置–&gt;点击添加解析后添加如图所示的两条<br><br><img src="/img/WechatIMG40.jpg" alt="图片"><br><br>终端执行</li>
+</ul>
+<p><pre><code><br>ping www.youshuo01.github.io<br></code></pre>获取的值为纪录值</p>
+<ul>
+<li>然后在blog/themes/next/source目录下<br>执行vi CNAME 后在CNAME中写入你的域名(如www.youshuo96.com)</li>
+<li>回到blog目录下<br>通过hexo clean及hexo g -d重新部署即可</li>
+</ul>
+<h5 id="至此-博客搭建就完成了现在-你可以通过你购买的域名来访问你自己的博客下一篇文章介绍一下我的博客主题yilia的配置以及如何写博客。"><a href="#至此-博客搭建就完成了现在-你可以通过你购买的域名来访问你自己的博客下一篇文章介绍一下我的博客主题yilia的配置以及如何写博客。" class="headerlink" title="至此 博客搭建就完成了现在 你可以通过你购买的域名来访问你自己的博客下一篇文章介绍一下我的博客主题yilia的配置以及如何写博客。"></a>至此 博客搭建就完成了<br>现在 你可以通过你购买的域名来访问你自己的博客<br>下一篇文章介绍一下我的博客主题yilia的配置以及如何写博客。</h5><p><br></p>
 
       
 
@@ -500,7 +547,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">尤硕&lt;br&gt;黑龙江大学&lt;br&gt;2014级软件工程专业&lt;br&gt;&lt;br&gt; 一枚程序媛&lt;br&gt;目前方向前端 实习于百度&lt;br&gt;&lt;br&gt;认真睡觉 认真吃饭&lt;br&gt;认真学习 认真生活&lt;br&gt;&lt;br&gt;邮箱:709088557@qq.com</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">尤硕&lt;br&gt;黑龙江大学&lt;br&gt;2014级软件工程专业&lt;br&gt;&lt;br&gt; 一枚程序员&lt;br&gt;目前方向前端 实习于百度&lt;br&gt;&lt;br&gt;认真睡觉 认真吃饭&lt;br&gt;认真学习 认真生活&lt;br&gt;&lt;br&gt;邮箱:709088557@qq.com</div>
   	  	
     	</section>
     
