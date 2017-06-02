@@ -8,15 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Archives: 2017/6 | 尤硕的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端小白的进击之路">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="尤硕的博客">
 <meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
 <meta property="og:site_name" content="尤硕的博客">
-<meta property="og:description" content="前端小白的进击之路">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="尤硕的博客">
-<meta name="twitter:description" content="前端小白的进击之路">
   
     <link rel="alternative" href="/atom.xml" title="尤硕的博客" type="application/atom+xml">
   
@@ -51,13 +48,15 @@
 		  <h1 class="header-author"><a href="/">尤硕</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">有事做 有人爱 有所期待</p>
+		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -65,10 +64,6 @@
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -81,11 +76,9 @@
 				
 					<a class="github" target="_blank" href="https://github.com/youshuo01" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="http://weibo.com/u/3281163264" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="mailto:709088557@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -109,6 +102,8 @@
 			  <h1 class="header-author js-header-author">尤硕</h1>
 			</hgroup>
 			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>有事做 有人爱 有所期待<i class="icon icon-quo-right"></i></p>
+			
 			
 			
 				
@@ -122,11 +117,9 @@
 					
 						<a class="github" target="_blank" href="https://github.com/youshuo01" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3281163264" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="mailto:709088557@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -137,7 +130,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -258,25 +251,17 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -344,15 +329,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">尤硕&lt;br&gt;黑龙江大学&lt;br&gt;2014级软件工程专业&lt;br&gt;&lt;br&gt; 一枚程序媛&lt;br&gt;目前方向前端 实习于百度&lt;br&gt;&lt;br&gt;认真睡觉 认真吃饭&lt;br&gt;认真学习 认真生活&lt;br&gt;&lt;br&gt;邮箱:709088557@qq.com</div>
   	  	
     	</section>
     
